@@ -1,0 +1,910 @@
+/**
+ * FOTOhub AI — Admin Styles
+ *
+ * @package FotohubAI
+ */
+
+/* =========================================
+   Settings Page
+   ========================================= */
+
+.fotohub-settings-wrap {
+	max-width: 900px;
+}
+
+.fotohub-settings-header {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-left: 4px solid #4f46e5;
+	padding: 12px 16px;
+	margin: 16px 0;
+}
+
+.fotohub-settings-info {
+	margin-top: 24px;
+}
+
+.fotohub-features-table {
+	margin-top: 12px;
+}
+
+.fotohub-features-table td,
+.fotohub-features-table th {
+	padding: 10px 12px;
+}
+
+/* Connection test */
+.fotohub-test-connection {
+	margin-left: 8px !important;
+}
+
+#fotohub-connection-status {
+	display: inline-block;
+	margin-left: 12px;
+	font-weight: 500;
+}
+
+#fotohub-connection-status.success {
+	color: #00a32a;
+}
+
+#fotohub-connection-status.error {
+	color: #d63638;
+}
+
+/* =========================================
+   Modal
+   ========================================= */
+
+.fotohub-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 160000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fotohub-modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.6);
+	z-index: 1;
+}
+
+.fotohub-modal-content {
+	position: relative;
+	z-index: 2;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+	width: 680px;
+	max-width: 90vw;
+	max-height: 85vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.fotohub-modal-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 24px;
+	border-bottom: 1px solid #e2e4e7;
+}
+
+.fotohub-modal-header h2 {
+	margin: 0;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.fotohub-modal-header h2 .dashicons {
+	color: #4f46e5;
+}
+
+.fotohub-modal-close {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 4px;
+	border-radius: 4px;
+	color: #50575e;
+}
+
+.fotohub-modal-close:hover {
+	background: #f0f0f1;
+	color: #1d2327;
+}
+
+.fotohub-modal-body {
+	padding: 24px;
+	overflow-y: auto;
+	flex: 1;
+}
+
+.fotohub-modal-footer {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 8px;
+	padding: 16px 24px;
+	border-top: 1px solid #e2e4e7;
+	background: #f6f7f7;
+	border-radius: 0 0 8px 8px;
+}
+
+.fotohub-modal-status {
+	margin-right: auto;
+	font-size: 13px;
+}
+
+.fotohub-modal-status.success {
+	color: #00a32a;
+}
+
+.fotohub-modal-status.error {
+	color: #d63638;
+}
+
+/* =========================================
+   Forms
+   ========================================= */
+
+.fotohub-form-group {
+	margin-bottom: 16px;
+}
+
+.fotohub-form-group label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 6px;
+	color: #1d2327;
+}
+
+.fotohub-form-group label .required {
+	color: #d63638;
+}
+
+.fotohub-form-row {
+	display: flex;
+	gap: 16px;
+}
+
+.fotohub-form-half {
+	flex: 1;
+}
+
+.fotohub-dims-inputs {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.fotohub-dims-inputs input {
+	width: 80px;
+}
+
+.fotohub-dims-inputs span {
+	color: #757575;
+}
+
+/* =========================================
+   Progress
+   ========================================= */
+
+.fotohub-progress {
+	margin: 20px 0;
+}
+
+.fotohub-progress-bar {
+	height: 8px;
+	background: #e2e4e7;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+
+.fotohub-progress-fill {
+	height: 100%;
+	background: linear-gradient(90deg, #4f46e5, #7c3aed);
+	border-radius: 4px;
+	width: 0%;
+	transition: width 0.3s ease;
+}
+
+.fotohub-progress-fill.indeterminate {
+	width: 30% !important;
+	animation: fotohub-progress-indeterminate 1.5s infinite ease-in-out;
+}
+
+@keyframes fotohub-progress-indeterminate {
+	0% { transform: translateX(-100%); }
+	100% { transform: translateX(400%); }
+}
+
+.fotohub-progress-text {
+	font-size: 13px;
+	color: #50575e;
+	text-align: center;
+}
+
+/* =========================================
+   Results Grid
+   ========================================= */
+
+.fotohub-results-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 12px;
+	margin-top: 12px;
+}
+
+.fotohub-result-item {
+	border: 1px solid #e2e4e7;
+	border-radius: 6px;
+	overflow: hidden;
+	transition: box-shadow 0.2s;
+}
+
+.fotohub-result-item:hover {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fotohub-result-item img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	display: block;
+}
+
+.fotohub-result-item-actions {
+	padding: 8px;
+	display: flex;
+	gap: 4px;
+	justify-content: center;
+}
+
+.fotohub-result-item-actions a {
+	font-size: 12px;
+	text-decoration: none;
+}
+
+/* =========================================
+   Upload button
+   ========================================= */
+
+.fotohub-upload-button-wrap {
+	margin-top: 16px;
+	text-align: center;
+}
+
+.fotohub-upload-button-wrap .button {
+	font-size: 14px;
+	padding: 6px 16px;
+	height: auto;
+}
+
+/* =========================================
+   Bulk Page
+   ========================================= */
+
+.fotohub-bulk-wrap {
+	max-width: 1100px;
+}
+
+.fotohub-bulk-container {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.fotohub-bulk-input {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 24px;
+}
+
+.fotohub-bulk-output {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 24px;
+}
+
+/* Tabs */
+.fotohub-bulk-tabs {
+	display: flex;
+	border-bottom: 1px solid #c3c4c7;
+	margin-bottom: 16px;
+}
+
+.fotohub-tab {
+	background: none;
+	border: none;
+	border-bottom: 2px solid transparent;
+	padding: 8px 16px;
+	font-size: 14px;
+	cursor: pointer;
+	color: #50575e;
+	transition: all 0.2s;
+}
+
+.fotohub-tab:hover {
+	color: #1d2327;
+}
+
+.fotohub-tab.active {
+	color: #4f46e5;
+	border-bottom-color: #4f46e5;
+	font-weight: 500;
+}
+
+.fotohub-tab-content {
+	display: none;
+}
+
+.fotohub-tab-content.active {
+	display: block;
+}
+
+/* Prompt count */
+.fotohub-prompt-count {
+	text-align: right;
+	font-size: 13px;
+	color: #757575;
+}
+
+/* CSV preview */
+.fotohub-csv-preview {
+	margin-top: 12px;
+	padding: 12px;
+	background: #f6f7f7;
+	border-radius: 4px;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.fotohub-csv-preview ul {
+	margin: 0;
+	padding-left: 20px;
+}
+
+.fotohub-csv-preview li {
+	font-size: 13px;
+	margin-bottom: 4px;
+}
+
+/* Bulk options */
+.fotohub-bulk-options {
+	margin-top: 20px;
+	padding-top: 16px;
+	border-top: 1px solid #e2e4e7;
+}
+
+.fotohub-bulk-options h3 {
+	margin-top: 0;
+}
+
+/* Bulk actions */
+.fotohub-bulk-actions {
+	margin-top: 20px;
+	text-align: center;
+}
+
+/* Bulk errors */
+.fotohub-bulk-errors ul {
+	list-style: disc;
+	padding-left: 20px;
+}
+
+.fotohub-bulk-errors li {
+	color: #d63638;
+	margin-bottom: 4px;
+}
+
+/* =========================================
+   WooCommerce Product Panel
+   ========================================= */
+
+.fotohub-product-panel {
+	padding: 12px;
+}
+
+.fotohub-product-panel .form-field {
+	margin-bottom: 16px;
+}
+
+.fotohub-product-status {
+	display: inline-block;
+	margin-left: 12px;
+	font-size: 13px;
+}
+
+.fotohub-product-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.fotohub-product-gallery img {
+	width: 100%;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 4px;
+	border: 1px solid #e2e4e7;
+}
+
+/* =========================================
+   Spinner override
+   ========================================= */
+
+.fotohub-spinner {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #e2e4e7;
+	border-top-color: #4f46e5;
+	border-radius: 50%;
+	animation: fotohub-spin 0.6s linear infinite;
+	vertical-align: middle;
+	margin-right: 6px;
+}
+
+@keyframes fotohub-spin {
+	to { transform: rotate(360deg); }
+}
+
+/* =========================================
+   Stability Tools Page
+   ========================================= */
+
+.fotohub-stability-wrap {
+	max-width: 1200px;
+}
+
+.fotohub-tools-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 16px;
+	margin: 20px 0;
+}
+
+.fotohub-stability-tool-card {
+	background: #fff;
+	border: 2px solid #e2e4e7;
+	border-radius: 8px;
+	padding: 20px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.fotohub-stability-tool-card:hover {
+	border-color: #4f46e5;
+	box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1);
+	transform: translateY(-2px);
+}
+
+.fotohub-stability-tool-card.active {
+	border-color: #4f46e5;
+	background: #f5f3ff;
+}
+
+.fotohub-stability-tool-card .dashicons {
+	font-size: 32px;
+	width: 32px;
+	height: 32px;
+	color: #4f46e5;
+	margin-bottom: 8px;
+}
+
+.fotohub-stability-tool-card h4 {
+	margin: 8px 0 4px;
+	font-size: 14px;
+}
+
+.fotohub-stability-tool-card p {
+	font-size: 12px;
+	color: #757575;
+	margin: 0;
+}
+
+.fotohub-tool-panel {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 8px;
+	padding: 24px;
+	margin-top: 20px;
+}
+
+.fotohub-tool-panel h3 {
+	margin-top: 0;
+}
+
+/* Mask Canvas */
+.fotohub-mask-canvas-wrap {
+	position: relative;
+	display: inline-block;
+	margin: 12px 0;
+	border: 2px solid #e2e4e7;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+#fotohub-mask-canvas {
+	cursor: crosshair;
+	display: block;
+}
+
+.fotohub-mask-controls {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 8px 0;
+}
+
+.fotohub-mask-controls label {
+	font-size: 13px;
+	font-weight: 500;
+}
+
+/* Stability results */
+.fotohub-stability-result {
+	margin-top: 16px;
+	padding: 16px;
+	background: #f6f7f7;
+	border-radius: 8px;
+}
+
+.fotohub-stability-result img {
+	max-width: 100%;
+	border-radius: 4px;
+	margin-bottom: 8px;
+}
+
+/* =========================================
+   Video Modal
+   ========================================= */
+
+.fotohub-video-result video {
+	width: 100%;
+	max-height: 400px;
+	border-radius: 8px;
+	background: #000;
+}
+
+#fotohub-video-reference-preview {
+	max-width: 150px;
+	max-height: 100px;
+	border-radius: 4px;
+	margin-top: 8px;
+	border: 1px solid #e2e4e7;
+}
+
+#fotohub-video-status {
+	margin-top: 8px;
+	font-size: 13px;
+}
+
+#fotohub-video-status.success {
+	color: #00a32a;
+}
+
+#fotohub-video-status.error {
+	color: #d63638;
+}
+
+/* =========================================
+   Analytics Page
+   ========================================= */
+
+.fotohub-analytics-page {
+	max-width: 1200px;
+}
+
+.fotohub-analytics-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.fotohub-stat-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 16px;
+	margin-bottom: 24px;
+}
+
+.fotohub-stat-card {
+	background: #fff;
+	border: 1px solid #e2e4e7;
+	border-radius: 8px;
+	padding: 20px;
+	text-align: center;
+}
+
+.fotohub-stat-card .stat-value {
+	font-size: 32px;
+	font-weight: 700;
+	color: #1d2327;
+	line-height: 1.2;
+}
+
+.fotohub-stat-card .stat-label {
+	font-size: 13px;
+	color: #757575;
+	margin-top: 4px;
+}
+
+.fotohub-stat-card .dashicons {
+	font-size: 24px;
+	width: 24px;
+	height: 24px;
+	color: #4f46e5;
+	margin-bottom: 8px;
+}
+
+.fotohub-chart-section {
+	background: #fff;
+	border: 1px solid #e2e4e7;
+	border-radius: 8px;
+	padding: 24px;
+	margin-bottom: 20px;
+}
+
+.fotohub-chart-section h3 {
+	margin-top: 0;
+}
+
+.fotohub-chart-section canvas {
+	max-height: 300px;
+}
+
+/* =========================================
+   Scheduler Page
+   ========================================= */
+
+.fotohub-scheduler-wrap {
+	max-width: 1200px;
+}
+
+.fotohub-scheduler-tabs {
+	display: flex;
+	gap: 4px;
+	border-bottom: 1px solid #c3c4c7;
+	margin-bottom: 16px;
+}
+
+.fotohub-scheduler-tab {
+	background: none;
+	border: none;
+	border-bottom: 2px solid transparent;
+	padding: 8px 16px;
+	font-size: 14px;
+	cursor: pointer;
+	color: #50575e;
+	transition: all 0.2s;
+}
+
+.fotohub-scheduler-tab:hover {
+	color: #1d2327;
+}
+
+.fotohub-scheduler-tab.active {
+	color: #4f46e5;
+	border-bottom-color: #4f46e5;
+	font-weight: 500;
+}
+
+.fotohub-scheduler-tab .count {
+	display: inline-block;
+	background: #e2e4e7;
+	color: #50575e;
+	font-size: 11px;
+	padding: 1px 6px;
+	border-radius: 10px;
+	margin-left: 4px;
+}
+
+/* Status badges */
+.fotohub-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 12px;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.fotohub-badge-pending {
+	background: #e1ecf4;
+	color: #2271b1;
+}
+
+.fotohub-badge-running {
+	background: #fef3cd;
+	color: #996800;
+}
+
+.fotohub-badge-completed {
+	background: #d4edda;
+	color: #0a6c2e;
+}
+
+.fotohub-badge-failed {
+	background: #fde8e8;
+	color: #d63638;
+}
+
+/* Schedule form */
+.fotohub-schedule-form {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 8px;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.fotohub-schedule-form h3 {
+	margin-top: 0;
+}
+
+/* Jobs table */
+.fotohub-jobs-table {
+	width: 100%;
+	border-collapse: collapse;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+}
+
+.fotohub-jobs-table th,
+.fotohub-jobs-table td {
+	padding: 10px 12px;
+	text-align: left;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.fotohub-jobs-table th {
+	background: #f6f7f7;
+	font-weight: 600;
+	font-size: 13px;
+}
+
+.fotohub-jobs-table tr:hover td {
+	background: #f9f9f9;
+}
+
+/* =========================================
+   Copywriter Panel
+   ========================================= */
+
+.fotohub-ai-writer-panel {
+	padding: 12px;
+}
+
+.fotohub-ai-writer-panel .button {
+	margin: 4px 4px 4px 0;
+}
+
+.fotohub-ai-writer-panel h4 {
+	margin: 12px 0 8px;
+}
+
+#fotohub-ai-output {
+	margin-top: 12px;
+	padding: 12px;
+	background: #f6f7f7;
+	border-radius: 4px;
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+#fotohub-ai-output pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	font-size: 13px;
+	margin: 0;
+}
+
+.fotohub-title-options {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.fotohub-title-options li {
+	padding: 6px 0;
+	border-bottom: 1px solid #e2e4e7;
+}
+
+.fotohub-title-options li:last-child {
+	border-bottom: none;
+}
+
+.fotohub-title-options label {
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.fotohub-ai-apply {
+	margin-top: 12px !important;
+}
+
+/* Auto-refresh toggle */
+.fotohub-auto-refresh {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.fotohub-auto-refresh label {
+	font-size: 13px;
+	cursor: pointer;
+}
+
+/* Outpaint padding inputs */
+.fotohub-padding-inputs {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 8px;
+	max-width: 300px;
+}
+
+.fotohub-padding-inputs label {
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.fotohub-padding-inputs input {
+	width: 60px;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+
+@media (max-width: 782px) {
+	.fotohub-form-row {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.fotohub-modal-content {
+		width: 95vw;
+		max-height: 90vh;
+	}
+
+	.fotohub-results-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.fotohub-tools-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.fotohub-stat-cards {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.fotohub-analytics-header {
+		flex-direction: column;
+		gap: 12px;
+	}
+}
